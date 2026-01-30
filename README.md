@@ -7,7 +7,7 @@ RESTful API сервис заметок (CRUD) на Laravel 11 и Vue.js 3. Ко
 После клонирования репозитория достаточно выполнить:
 
 ```bash
-docker-compose up -d --build
+docker compose up -d --build
 ```
 
 Файл `.env` создаётся автоматически из `.env.example` при первом запуске контейнера. Приложение будет доступно по адресу: **http://localhost:8080**
@@ -66,5 +66,5 @@ docker-compose up -d --build
 
 - **Backend**: Laravel 11, PHP 8.3. Слой сервисов (`NoteService`) для бизнес-логики, «тонкие» контроллеры. Валидация через FormRequest, ответы через JsonResource.
 - **Frontend**: Vue 3 (Composition API), Vite, TailwindCSS. Компоненты: `NoteList`, `NoteForm`, `NoteItem`. API-клиент на Axios с обработкой ошибок.
-- **Docker**: сервисы `app` (PHP-FPM + Node для сборки фронта), `nginx`, `db` (MySQL). Volume для персистентности БД. Фронтенд собирается при выполнении `docker-compose up -d --build` (на этапе сборки образа) и при первом старте контейнера, если volume перезаписал `public/build`.
+- **Docker**: сервисы `app` (PHP-FPM + Node для сборки фронта), `nginx`, `db` (MySQL). Volume для персистентности БД. Фронтенд собирается при выполнении `docker compose up -d --build` (на этапе сборки образа) и при первом старте контейнера, если volume перезаписал `public/build`.
 
